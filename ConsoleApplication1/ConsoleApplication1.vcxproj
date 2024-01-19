@@ -131,12 +131,14 @@
     <ClCompile Include="ConsoleApplication1.cpp" />
     <ClCompile Include="file_reader.cpp" />
     <ClCompile Include="filter.cpp" />
+    <ClCompile Include="process.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="catalog.h" />
     <ClInclude Include="constants.h" />
     <ClInclude Include="file_reader.h" />
     <ClInclude Include="filter.h" />
+    <ClInclude Include="processing.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="..\..\cpp-console-library-subscription\main-project\data.txt" />

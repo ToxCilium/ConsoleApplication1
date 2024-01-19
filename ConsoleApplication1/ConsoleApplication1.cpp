@@ -8,6 +8,7 @@ using namespace std;
 #include "file_reader.h"
 #include "constants.h"
 #include "filter.h"
+#include "processing.h"
 //#include "processing.h"
 
 void output(catalog* subscription)
@@ -37,7 +38,10 @@ void output(catalog* subscription)
 
 int main()
 {
-	setlocale(LC_ALL, "");
+	/*setlocale(LC_ALL, "");*/
+	SetConsoleCP(1251); // Ввод с консоли в кодировке 1251
+	SetConsoleOutputCP(1251); // Вывод на консоль в кодировке 1251. Нужно только будет изменить шрифт консоли на Lucida Console или Consolas
+
 
 	cout << "Лабораторная работа №1. GITi\n";
 	cout << "Вариант №10. Католог товаров\n";
@@ -62,7 +66,9 @@ int main()
 		cout << "4) Сортировка слиянием по возрастанию категории" << '\n';
 		cout << "5) Сортировка выбором по убыванию количества товаров" << '\n';
 		cout << "6) Сортировка выбором по возрастанию категории" << '\n';
+		cout << "7) Найти общую стоимость всех товаров в указанной категории" << '\n';
 		cout << "\nВведите номер выбранного пункта: ";
+		char cat[MAX_STRING_SIZE];
 		int item;
 		cin >> item;
 		cout << '\n';
@@ -119,6 +125,15 @@ int main()
 			{
 				output(subscriptions[i]);
 			}
+			cout << '\n';
+			cout << '\n';
+			break;
+		case 7:
+			cout << "***** Введите название категории *****" << '\n';
+			cin >> cat;
+			system("cls");
+			cout << "***** Общая цена товаров по категории *****" << '\n';
+			cout << process(subscriptions, size, cat);
 			cout << '\n';
 			cout << '\n';
 			break;
